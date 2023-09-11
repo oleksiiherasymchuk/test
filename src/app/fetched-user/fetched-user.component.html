@@ -1,0 +1,35 @@
+<div class="user">
+  <app-weather
+    [city]="randomUser.location.city"
+    [coordinates]="randomUser.location.coordinates"
+    [weatherData]="weatherData"
+  ></app-weather>
+  <div class="userCard">
+    <div class="userCardAvatar">
+      <img [src]="randomUser.picture.medium" alt="avatar" />
+    </div>
+    <div class="userCardInfo">
+      <p>
+        <!-- <img src="../images/user.jpeg" alt="userName" />  -->
+        <span style="font-weight: bold"
+          >{{ randomUser.name.first | titlecase }}
+          {{ randomUser.name.last | titlecase }}</span
+        >
+      </p>
+      <p>
+        <!-- <img src="../../images/city.png" alt="userLocation" />  -->
+        <span style="font-style: italic">{{
+          randomUser.location.city | titlecase
+        }}</span>
+      </p>
+      <p>
+        <!-- <img src="../../images/email.png" alt="userEmail" />  -->
+        <span>{{ randomUser.email }}</span>
+      </p>
+    </div>
+    <button (click)="saveUserData()">Save user</button>
+  </div>
+
+  <div class="savedUser" [routerLink]="['/saved']">See saved users</div>
+</div>
+

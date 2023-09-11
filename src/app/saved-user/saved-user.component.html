@@ -1,0 +1,24 @@
+<div class="users">
+  <div class="savedUser" [routerLink]="['/']">See saved users</div>
+  <div class="user" *ngFor="let user of userListFromLocalStorage">
+    <div class="userCard">
+      <div class="userCardAvatar">
+        <img [src]="user.picture.medium" alt="" />
+      </div>
+      <div class="userCardInfo">
+        <p>
+          <!-- <img src="../images/user.jpeg" alt="userName" /> -->
+          <span style="font-weight: bold;">{{ user.name.first | titlecase }} {{ user.name.last | titlecase }}</span>
+        </p>
+        <p>
+          <!-- <img src="../../images/city.png" alt="userLocation" /> -->
+          <span style="font-style: italic;">{{ user.location.city | titlecase }}</span>
+        </p>
+        <p>
+          <!-- <img src="../../images/email.png" alt="userEmail" /> -->
+          <span>{{ user.email }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

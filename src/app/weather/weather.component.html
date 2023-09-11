@@ -1,0 +1,15 @@
+<div class="weather">
+  <div class="weatherLogo">
+    <img [src]="getWeatherImageURL(weatherData.current_weather.weathercode)" alt="Weather Icon">
+  </div>
+  <div class="weatherDescription">
+    <div class="weatherDescriptionCity">{{ city }}</div>
+    <div class="weatherDescriptionCurrentT">{{ weatherData.current_weather.temperature }}°C</div>
+    <div class="weatherDescriptionMixMax">
+      Min:
+      <span>↓ {{ getMinTemperature() }}</span>
+      Max:
+      <span>↑ {{ getMaxTemperature() }}</span>
+    </div>
+  </div>
+</div>
